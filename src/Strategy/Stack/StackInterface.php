@@ -7,5 +7,4 @@ interface StackInterface
     public function push($item);
     public function pop();
     public function clear();
-    public function print();
 }

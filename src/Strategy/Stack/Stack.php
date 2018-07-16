@@ -9,29 +9,41 @@ class Stack implements StackInterface
     /**
      * Undocumented variable
      *
-     * @var StackPrinterInterface
+     * @var StackStringifierInterface
      */
-    private $printer;
+    private $stringifier;
 
-    public function __constructor(StackPrinterInterface $printer)
+    public function __construct(StackStringifierInterface $stringifier)
     {
-        $this->printer = $printer;
+        $this->stringifier = $stringifier;
     }
 
-    public function print()
+    public function __toString()
     {
-        $this->printer->print($this->items);
+        return $this->stringifier->stringify($this);
+    }
+
+    public function toArray()
+    {
+        return $this->items;
     }
 
     public function push($item)
     {
+        $this->items[] = $item;
     }
 
     public function pop()
     {
+        if (!$this->items) {
+            return null;
+        }
+
+        return array_pop($this->items);
     }
 
     public function clear()
     {
+        $this->items = null;
     }
 }
