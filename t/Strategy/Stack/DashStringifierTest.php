@@ -12,6 +12,6 @@ class DashStringifierTest extends TestCase
         $stack->push(1);
         $stack->push(100);
         $stack->push(-1);
-        $this->assertEquals("1 - 100 - -1", (string)$stack);
+        $this->assertEquals("-1 - 100 - 1", (string)$stack);
     }
 }

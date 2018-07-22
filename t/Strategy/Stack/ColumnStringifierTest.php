@@ -12,6 +12,6 @@ class ColumnStringifierTest extends TestCase
         $stack->push(10);
         $stack->push(20);
         $stack->push(100);
-        $this->assertEquals("10\n20\n100\n", (string)$stack);
+        $this->assertEquals("100\n20\n10\n", (string)$stack);
     }
 }

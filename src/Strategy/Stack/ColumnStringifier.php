@@ -2,6 +2,8 @@
 
 namespace Foton\Patterns\Strategy\Stack;
 
+use Foton\Patterns\Strategy\Stack\Interfaces\StackStringifierInterface;
+
 class ColumnStringifier implements StackStringifierInterface
 {
     private $delim = PHP_EOL;

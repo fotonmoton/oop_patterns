@@ -43,6 +43,6 @@ class StackTest extends \PHPUnit\Framework\TestCase
         $stack->push(10);
         $stack->push(22);
         $stackArray = $stack->toArray();
-        $this->assertEquals([1, 10, 22], $stackArray);
+        $this->assertEquals([22, 10, 1], $stackArray);
     }
 }

@@ -2,6 +2,9 @@
 
 namespace Foton\Patterns\Strategy\Stack;
 
+use Foton\Patterns\Strategy\Stack\Interfaces\StackInterface;
+use Foton\Patterns\Strategy\Stack\Interfaces\StackStringifierInterface;
+
 class Stack implements StackInterface
 {
     private $items;
@@ -30,7 +33,11 @@ class Stack implements StackInterface
 
     public function push($item)
     {
-        $this->items[] = $item;
+        if (!$this->items) {
+            $this->items = [];
+        }
+
+        array_unshift($this->items, $item);
     }
 
     public function pop()
@@ -39,7 +46,7 @@ class Stack implements StackInterface
             return null;
         }
 
-        return array_pop($this->items);
+        return array_shift($this->items);
     }
 
     public function clear()

@@ -1,6 +1,6 @@
 <?php
 
-namespace Foton\Patterns\Strategy\Stack;
+namespace Foton\Patterns\Strategy\Stack\Interfaces;
 
 interface StackInterface
 {

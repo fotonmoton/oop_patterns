@@ -2,6 +2,8 @@
 
 namespace Foton\Patterns\Strategy\Stack;
 
+use Foton\Patterns\Strategy\Stack\Interfaces\StackStringifierInterface;
+
 class DashStringifier implements StackStringifierInterface
 {
     private $delim = '-';
